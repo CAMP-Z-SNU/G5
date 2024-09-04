@@ -1,0 +1,38 @@
+package amstrong;
+import java.util.*;
+public class amstr {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Give number input:");
+		int num=sc.nextInt();// TODO Auto-generated method stub
+		int n=num;
+		int x=num;
+		int c=0;
+		while(n!=0) {
+			c+=1;//for calculating the number of digits(power)
+			n=n/10;
+		}
+		int count=0;
+
+		while(x!=0) {
+			int z=1;
+			int a=x%10;
+			for(int i=0;i<c;i++) {
+			z=z*a; //calculating each digit to that power
+						
+		}
+			count+=z;//the final sum
+			x=x/10;
+	}
+
+		if(count==num) {
+			System.out.println("It is an armstrong number");
+		}
+		else {
+			System.out.println("It is not an armstrong number");	
+		}
+
+}
+	
+}

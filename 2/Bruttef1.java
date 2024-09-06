@@ -1,3 +1,4 @@
+//Brute force code to check if a number(num) is a prime number or not.
 package primeno;
 import java.util.*;
 public class Bruttef1 {

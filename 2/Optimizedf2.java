@@ -1,3 +1,4 @@
+//Optimized code to check if a number(num) is a prime number or not.
 package primeno;
 import java.util.*;
 public class Optimizedf2 {

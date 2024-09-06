@@ -1,7 +1,7 @@
 package primeno;
 import java.util.*;
-public class Brutef1 {
-	public static boolean f1(int num) {
+public class Optimizedf2 {
+	public static boolean f2(int num) {
 		boolean x=false;
 		for(int i=2;i<=num/2;i++) {
 			if(num%i==0) {
@@ -17,11 +17,11 @@ public class Brutef1 {
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Enter the number to be checked:");
 		int num=sc.nextInt();
-		if(f1(num)==true) {
-			System.out.println("It is not prime");
+		if(f2(num)==true) {
+			System.out.println("It is not a prime number");
 		}
 		else {
-			System.out.println("It is prime");
+			System.out.println("It is a prime number");
 		}
 			
 		

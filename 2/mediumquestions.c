@@ -141,5 +141,115 @@ void func12(int x,int y){
     }
 }
 
+//Number of days in a given month of a given year
+int leap(int year){
+    if(year%100==0){
+        if(year%400==0){
+            return 1;;
+        }
+    }
+    else if(year%4==0){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+void func14(int month,int year){
+    int day;
+    if(month==1 || month==3 ||month==5 || month==7 || month==8 || month==10 || month==12){
+        day=31;
+    }
+    else if(month==2){
+    if(leap(year)==1){
+        day=29;
+    }
+    else{
+        day=28;
+    }
+    }
+    else{
+        day=30;
+    }
+    printf("Number of days: %d",day);
+}
 
+//Permutations in which n people can occupy r seats in a theatre
+int fact(int num){
+    int fact=1;
+    for(int i=2;i<=num;i++){
+        fact=fact*i;
+    }
+    return fact;
+}
+void func15(int n,int r){
+    int x=(fact(n))/fact(n-r);
+    printf("Total number of ways to occupy seats:%d",x);
 
+}
+
+//Number of times digit 3 occurs in each and every number from 0 to n
+
+int count(int num){
+    int count=0;
+    int u=num;
+    while(u!=0){
+        int v=u%10;
+        if(v==3){
+            count+=1;
+        }
+        u=u/10;
+    }
+    return count;
+}
+void func16(int n){
+    for(int i=0;i<=n;i++){
+        printf("3 occurs %d times in %d\n",count(i),i);
+        
+    }
+}
+
+//Number of integers which has exactly 9 divisors
+int count1(int num){
+    int count=0;
+    for(int i=1;i<=num;i++){
+        if(num%i==0){
+            count+=1;
+        }
+    }
+    if(count==9){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+void func17(int n){
+    int c=0;
+    for(int i=0;i<=n;i++){
+        if(count1(i)==1){
+            c+=1;
+        }
+    }
+    printf("Number of integers with 9 divisors:%d",c);
+}
+
+#include<math.h>
+//Roots of a quadratic equation
+void func18(int a,int b,int c){
+    float x1,x2;
+    int d=(b*b)-(4*a*c);
+    if(d>0){
+      x1=(-b-(pow(d,0.5)))/(2*a*c);
+      x2=(-b+(pow(d,0.5)))/(2*a*c);  
+      printf("The roots are:%f & %f",x1,x2);
+    }
+    else if(d==0){
+        x1=-b/(2*a*c);
+        x2=x1;
+        printf("The roots are:%f & %f",x1,x2);
+    }
+    else{
+        printf("Roots don't exist");
+    }
+}

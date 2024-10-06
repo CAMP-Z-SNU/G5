@@ -276,3 +276,175 @@ void func22(int num){
     }
     
 }
+
+//Strong number or not
+int fact(int num){
+    int fact=1;
+    for(int i=2;i<=num;i++){
+        fact=fact*i;
+    }
+    return fact;
+}
+void func23(int x){
+    int summ=0;
+    int u=x;
+    while(u!=0){
+        int z=u%10;
+        summ+=fact(z);
+        u=u/10;
+            }
+    if(summ==x){
+        printf("It is a strong number");
+        }
+    else{
+        printf("It is not a strong number");
+    }
+}
+
+//Perfect number or not
+void func24(int num){
+    int summ=0;
+    int u=num;
+    for(int i=1;i<num;i++){
+        if(num%i==0){
+            summ+=i;
+        }
+    }
+    //printf("%d",summ);
+    if(summ==num){
+        printf("It is a perfect number");
+        }
+    else{
+      printf("It is not a perfect number");  
+    }
+}
+
+//Friendly pair or not (amicable or not)
+void func25(int a,int b){
+    int sum1=0;
+    int sum2=0;
+    for(int i=1;i<a;i++){
+        if(a%i==0){
+            sum1+=i;
+        }
+    }
+    for(int i=1;i<b;i++){
+        if(b%i==0){
+            sum2+=i;
+        }
+    }
+    float r1=sum1/a;
+    float r2=sum2/b;
+    //printf("%f %f",r1,r2);
+    if(r1==r2){
+        printf("It is a friendly pair");
+        }
+    else{
+      printf("It is not a friendly pair");  
+    }
+}
+
+//Automorphic number or not
+int numcount(int a){
+    int x=a;
+    int count=0;
+    while(x!=0){
+        count+=1;
+        x=x/10;
+    }
+    return count;
+}
+
+
+void func26(int num){
+    int sq=num*num;
+    int c=numcount(num);
+    int n=0;
+    for(int i=0;i<c;i++){
+        int v=sq%10;
+        n=(n*10)+v;
+        sq=sq/10;
+        
+    }
+    int y=n;
+    int rev=0;
+    while(y!=0){
+        rev=(rev*10)+(y%10);
+        y=y/10;
+    }
+    //printf("\n%d",rev);
+    if(rev==num){
+        printf("It is automorphic number");
+    }
+    else{
+       printf("It is not automorphic number"); 
+    }
+}
+
+//Harshad number or not
+int summ(int a){
+    int x=a;
+    int count=0;
+    while(x!=0){
+        count+=x%10;
+        x=x/10;
+    }
+    return count;
+}
+void func27(int num){
+    if(num%summ(num)==0){
+        printf("It is Harshad number");
+    }
+    else{
+        printf("It is not Harshad number");
+    }
+}
+
+//Abundant number or not
+void func28(int num){
+    int summ=0;
+    for(int i=1;i<num;i++){
+        if(num%i==0){
+            summ+=i;
+        }
+    }
+    if(summ>num){
+        printf("It is abundant number");
+    }
+    else{
+        printf("It is not abundant number");
+    }
+}
+
+//Power of a number
+void func29(int base,int exp){
+    int x=1;
+    while(exp!=0){
+        x*=base;
+        exp--;
+    }
+    printf("%d",x);
+}
+
+//Factors of a number
+void func30(int num){
+    printf("The factors are:");
+    for(int i=1;i<=num;i++){
+        if(num%i==0){
+            printf("%d\n",i);
+        }
+    }
+}
+
+//Add two fractions
+void func31(int a,int b,int c,int d){
+    int x=(a*d)+(b*c);
+    int y=b*d;
+    int gcd;
+    for(int i=1; i <= x && i <= y; ++i)
+    {
+        if(x%i==0 && y%i==0)
+            gcd = i;
+    }
+    printf("%d/%d",x/gcd,y/gcd);
+}

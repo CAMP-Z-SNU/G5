@@ -68,3 +68,31 @@ void pyramid4(int n){
         printf("\n");
     }
 }
+
+//Floyd's triangle
+void floydstri(int n){
+    int k=1;
+    for(int i=1;i<n;i++){
+        for (int j = 1; j <= i; j++) {
+            printf("%d\t",k);
+            k++;
+        }
+        printf("\n");
+
+    }
+}
+
+//Pascal triangle
+void pascalstri(int n){
+
+    for (int line = 1; line <= n; line++) {
+        for (int space = 1; space <= n - line; space++)
+            printf("  ");
+        int coef = 1;
+        for (int i = 1; i <= line; i++) {
+            printf("%4d", coef);
+            coef = coef * (line - i) / i;
+        }
+        printf("\n");
+    }
+}
